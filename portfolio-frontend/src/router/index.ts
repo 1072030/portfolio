@@ -4,16 +4,11 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    component: () => import("@/layouts/Page/index.vue"),
-    name: "Main Page",
-    redirect: "/cart",
-    children: [
-      {
-        path: "/cart",
-        component: () => import("@/views/cart/index.vue"),
-        name: "Cart Page",
-      },
-    ],
+    name: "Home",
+    meta: {
+      name: "首頁",
+    },
+    component: () => import("@/App.vue"), //lazy-load
   },
 ];
 
